@@ -19,3 +19,29 @@ var perrsonaje1 = "Gwen";
 let personaje2 = "Mordekaiser";
 
 const precioSkin = 300;
+
+// alcance de las variabeles
+
+{
+    var personaje3 = "Yone";
+    let personaje4 = "Riven";
+
+}
+
+console.log(personaje3);
+// console.log(personaje4); --- IGNORE  que no llega por su alcanze
+
+//--------------------------- alert, prompt, confirm -------------------------
+alert("No jueges este juego porfavor");
+const personajeFavorito = prompt("¿Cual es tu personaje favorito?");
+console.info("personaje favorito: " + personajeFavorito);
+
+const hoyHayJuego = confirm("¿Hoy hay juego?");
+if(hoyHayJuego){
+    console.warn("A jugar!");
+}
+else{
+    console.infor(".....");
+}
+
+
