@@ -45,3 +45,34 @@ else{
 }
 
 
+// --------------------------- Funciones -------------------------
+
+function descargar () {
+    window.location.herf = "https://www.leagueoflegends.com/es-mx/download/";
+}
+
+if (hoyHayJuego) {
+    descargar();
+}
+else{
+    console.info("Buen dia");
+}
+
+// funciones moderadas
+
+() => {}
+
+docuemto.getElementById("botonDesistalar").onclick = () => {}
+    alert("jojojo no se puede desinstalar el juego");
+
+
+const iniciarPartida = () => {
+    alert
+}
+
+iniciarPartida();
+
+// ------------------------------- Arreglos -----------------------------
+
+const arreglo = ("Elementos");
+
