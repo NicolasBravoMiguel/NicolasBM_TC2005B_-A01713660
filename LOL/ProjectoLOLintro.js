@@ -76,3 +76,25 @@ iniciarPartida();
 
 const arreglo = ("Elementos");
 
+const arreglo2 = new  Array();
+
+arreglo.push(134)
+
+arreglo[10] = 4342;
+
+arreglo["AA"] = 9999;
+
+
+for(let posicion in arreglo){
+    console.log(arreglo[posicion]);
+}
+
+// Objetos
+
+const Perro = {
+    nomre: "Banci",
+    color: "Cafe",
+    Edad: 2,
+};
+
+// Funciones anonimas
