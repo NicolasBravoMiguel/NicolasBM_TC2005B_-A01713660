@@ -76,5 +76,32 @@ function promedio (matriz) {
 
 // ------------------- Caso 5 ----------------------
 
+function inverso(numero) {
+    
+    const numeroInvertido = parseInt(String(numero).split('').reverse().join(''));
+    
+    return numeroInvertido;
+}
+
+let num = parseInt(prompt("Ingresa un número para invertirlo:"));
+
+let resultado = inverso(num);
+
+document.write("El número invertido es: " + resultado);
 
 
+// ------------------- Caso 6 ----------------------
+
+function esPrimo(numero) {
+    if (numero <= 1) return false;
+    if (numero === 2) return true;
+    if (numero % 2 === 0) return false;
+    
+    for (let i = 3; i <= Math.sqrt(numero); i += 2) {
+        if (numero % i === 0) return false;
+    }
+    return true;
+}
+
+let num2 = parseInt(prompt("Ingresa un numero para saber si es primo o no:"));
+document.write(num + (esPrimo(num) ? " es primo" : " no es primo"));
