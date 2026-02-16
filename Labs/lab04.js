@@ -37,7 +37,7 @@ function contador(arreglo){
     let cero = 0;
     let positivos = 0;
 
-    for (let i = 0; i = arreglo.length; i++) {
+    for (let i = 0; i < arreglo.length; i++) {
         if(arreglo[i] < 0 ) {
             negativos++;
         } else if (arreglo[i] === 0) {
@@ -59,17 +59,22 @@ function contador(arreglo){
 function promedio (matriz) {
     const resultado = [];
 
-    for(let i = 0; i = matriz.lenght; i++){
+    for(let i = 0; i < matriz.length; i++){
         let sum = 0;
         
-        for (let n = 0; n = matirz[i].lenght; n++) {
-            sum += [i][n];
+        for (let n = 0; n < matirz[i].length; n++) {
+            sum += martiz[i][n];
         }
 
-        const promedio = suma / matriz[i]. lenght;
+        const promedio = suma / matriz[i].length;
         resultado.push(promedio);
     }
     
+    return resultado;
 
 }
+
+// ------------------- Caso 5 ----------------------
+
+
 
