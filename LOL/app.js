@@ -16,13 +16,100 @@ for (let item of arreglo) {
     }, item);   
 }
 
+const html = `<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name=""viewpoint" content=""width=device-width, initial-scale="1">
+        <title> Hello Bulma! </title>
+        <link rel="stylesheet" href="intro.css">
+
+    </head>
+    <body>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">
+                    League of Legends
+                </h1>
+                   <p class="subtitle">
+                      My first website with <strong>Bulma</strong>!
+                   </p>
+                   <div class="columns">
+                        <div class="colum">
+                            <div id="gwen"></div>
+                        </div>
+                            <button class="js-modal-trigger" data-target="modal-js-example">
+                                <figure class="image">
+                                    <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Mordekaiser_0.jpg" />
+                                </figure>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div id="jax"></div>
+                    </div>
+                    <div class="column">
+                        Yone
+                        <figure class="image">
+                            <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yone_0.jpg" />
+                        </figure>
+                    </div>
+                </div>
+                <div class="colums">
+                    <div class="column">
+                        Riven
+                        <figure class="image">
+                            <class="is-roung" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Riven_0.jpg" />
+                        </figure>
+                    </div>
+                    <div class column>
+                        Yasuo
+                        <figure class="image">
+                            <img clas="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg" />
+                        </figure>
+                    </div>
+                    <div class="column">
+                        Garen
+                        <figure class="image">
+                            <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Garen_0.jpg" />
+                        </figure>
+                    </div>
+                    <div class="column">
+                        Aatrox
+                        <figure class ="image">
+                            <img class=""is-rounded" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg" />
+                        </figure>
+                    </div>
+                </div>
+        </section>
+
+        <div id="modal-js-example" class="modal">
+            <div class="modal-background"></div>
+        
+            <div class="modal-content">
+                <div class="box">
+                <p id="contenido_modal"></p>
+                <!-- Your content -->
+                </div>
+            </div>
+        
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+        
+          <script src="js/lol.js"></script>
+          </body>
+        </html>
+
+`;
+
 
 const http = require("http");
 const server = http.createServer( (request, response) => {
 
     console.log(response);
     console.log(request.url);
-    response.write("");
+    response.setHeader("Content-Type", "text/html");
+    response.write(html);
     response.end();
 
 });
