@@ -13,7 +13,31 @@ const gwen = {
     imagen: "https://www.google.com/imgres?q=gwen&imgurl=https%3A%2F%2Fddragon.leagueoflegends.com%2Fcdn%2Fimg%2Fchampion%2Fsplash%2FGwen_0.jpg&imgrefurl=https%3A%2F%2Fwww.leagueoflegends.com%2Fes-mx%2Fchampions%2Fgwen%2F&docid=0Zrpr6fPIAy-9M&tbnid=do-v0xLRvXp39M&vet=12ahUKEwjBl-zOzN6SAxVRPUQIHerSLSUQnPAOegQIGxAB..i&w=1215&h=717&hcb=2&ved=2ahUKEwjBl-zOzN6SAxVRPUQIHerSLSUQnPAOegQIGxAB",
 }
 
-const gwen = document.getElementById("gwen");
-console.div(gwen);
+const mordekaiser = {
+  nombre: "Mordekaiser",
+  descripcion: `Mordekaiser es un señor de la guerra nigromante que domina el carril superior con 
+      daño mágico sostenido, gran aguante y una definitiva que aísla a enemigos en su "reino de la muerte". 
+      Destaca por su pasiva de daño en área, su maza Ocaso y su capacidad para robar estadísticas, 
+      siendo popular por su contundencia.`,
+  tipo: "tanque",
+  imagen: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Mordekaiser_0.jpg",
+}
+
+const jax = {
+  nombre: "Jax",
+  descripcion: `Inigualable tanto en sus habilidades de armamentos únicos como en su mordaz sarcasmo, 
+  Jax es el último maestro de armas conocido de Icathia. 
+  Después de que su tierra natal fue destruida por su propia arrogancia al desencadenar el Vacío, 
+  Jax y su especie juraron proteger lo poco que quedó. Mientras la magia aumenta en el mundo, 
+  la amenaza durmiente se agita una vez más, y Jax vaga por Valoran, portando la última luz de 
+  Icathia y poniendo a prueba a todos los guerreros que conoce para ver si son suficientemente 
+  fuertes para erguirse a su lado...`,
+  tipo: "tanque",
+  imagen: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jax_0.jpg",
+}
+
+const div_gwen = document.getElementById("gwen");
+console.log(div_gwen);
+
 
 
