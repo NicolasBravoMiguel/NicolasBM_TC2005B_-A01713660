@@ -45,7 +45,7 @@ else{
 }
 
 
-// --------------------------- Funciones -------------------------
+// --------------------------- Funciones Tradicionales -------------------------
 
 function descargar () {
     window.location.herf = "https://www.leagueoflegends.com/es-mx/download/";
@@ -67,34 +67,45 @@ docuemto.getElementById("botonDesistalar").onclick = () => {}
 
 
 const iniciarPartida = () => {
-    alert
+    alert("Iniciar partida!");
 }
 
 iniciarPartida();
 
 // ------------------------------- Arreglos -----------------------------
 
-const arreglo = ("Elementos");
 
-const arreglo2 = new  Array();
+const personajes = ["Fizz"];
 
-arreglo.push(134)
+const arreglo2 = new Array();
 
-arreglo[10] = 4342;
+personajes.push("Irelia");
+personajes[10] = "Leona";
 
-arreglo["AA"] = 9999;
+// Arreglos asociativos
 
+personajes["hola"] = "Lux";
 
-for(let posicion in arreglo){
-    console.log(arreglo[posicion]);
+// Recorrdio tradicional de los arreglos
+
+for(let i = 0; i < personajes.length; i++){
+    console.log(personajes[i]);
+}
+
+// Recorridos alternativos de los arreglos
+
+for(let personaje of personajes){
+    console.log(personaje);
 }
 
 // Objetos
 
-const Perro = {
-    nomre: "Banci",
-    color: "Cafe",
-    Edad: 2,
+const ecoDeLuden = {
+    nombre: " Eco de Luden",
+    color: " Morado",
+    daño: 100
 };
 
-// Funciones anonimas
+console.log(ecoDeLuden);
+
+
