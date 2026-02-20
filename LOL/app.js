@@ -16,6 +16,24 @@ for (let item of arreglo) {
     }, item);   
 }
 
+// --------------------- Pregunta 1 ---------------------
+
+const arreglo2 = [5, 6, 19, 3, 11, 2];
+
+function promedio(arreglo2){
+    let sum = 0;
+
+    for (let i = 0; i < arreglo2.length; i++)
+        sum += arreglo2[i]
+
+    return sum / arreglo2.length;
+}
+
+console.log("Arreglo: " + arreglo2);
+console.log("El promedio es de: " + promedio(arreglo2));
+
+
+
 const html =`
 
 <!DOCTYPE html>
