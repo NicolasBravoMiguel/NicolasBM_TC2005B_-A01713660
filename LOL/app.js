@@ -16,13 +16,14 @@ for (let item of arreglo) {
     }, item);   
 }
 
-const html = `<!DOCTYPE html>
+const html =`
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name=""viewpoint" content=""width=device-width, initial-scale="1">
         <title> Hello Bulma! </title>
-        <link rel="stylesheet" href="intro.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
 
     </head>
     <body>
@@ -59,13 +60,13 @@ const html = `<!DOCTYPE html>
                     <div class="column">
                         Riven
                         <figure class="image">
-                            <class="is-roung" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Riven_0.jpg" />
+                            <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Riven_0.jpg" />
                         </figure>
                     </div>
-                    <div class column>
+                    <div class ="column">
                         Yasuo
                         <figure class="image">
-                            <img clas="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg" />
+                            <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg" />
                         </figure>
                     </div>
                     <div class="column">
@@ -77,11 +78,28 @@ const html = `<!DOCTYPE html>
                     <div class="column">
                         Aatrox
                         <figure class ="image">
-                            <img class=""is-rounded" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg" />
+                            <img class="is-rounded" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg" />
                         </figure>
                     </div>
                 </div>
         </section>
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <ul>
+                            <li>git add -A: Sirve para agregar cambios a una transacción.</li>
+                            <li>
+                                git commit -m "escribir mensaje en imperativo": 
+                                Sirve para confirmar los cambios de una transacción.
+                            </li>
+                            <li>git push: Sirve para sincronizar una rama local con una rama en el repositorio remoto.</li>
+                            <li>git pull: Sirve para obtener los cambios de una rama remota hacia una rama local.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </section>
 
         <div id="modal-js-example" class="modal">
             <div class="modal-background"></div>
@@ -99,6 +117,8 @@ const html = `<!DOCTYPE html>
           <script src="js/lol.js"></script>
           </body>
         </html>
+
+
 
 `;
 
