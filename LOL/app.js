@@ -4,6 +4,7 @@ const filesystem = require("fs");
 
 filesystem.writeFileSync('hola.txt', 'Hola desde node');
 
+
 setTimeout(() => {
     console.log("JOJOJO te hackie!");
 }, 15000);
@@ -32,6 +33,35 @@ function promedio(arreglo2){
 console.log("Arreglo: " + arreglo2);
 console.log("El promedio es de: " + promedio(arreglo2));
 
+// --------------------- Pregunta 2 ---------------------
+
+const fs = require("fs");
+
+
+function escArchivo(texto) {
+    fs.writeFileSync("archivo.txt", texto);
+    console.log("Texto guardado en archivo.txt");
+}
+
+let mensaje = "Hola este texto se una prueba para que se guarde desde Node.js";
+
+escArchivo(mensaje);
+
+
+// --------------------- Pregunta 3 ---------------------
+
+let numero = 7;
+
+function cuadradoCubo(numero){
+    let cuadrado = numero * numero;
+    let cubo = cuadrado * numero;
+
+    return [cuadrado, cubo];
+}
+
+console.log("El numero es: " + numero);
+console.log("El cuadrado es: " + cuadradoCubo(numero)[0]);
+console.log("El cubo es: " + cuadradoCubo(numero)[1]);
 
 
 const html =`
