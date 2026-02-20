@@ -6,6 +6,9 @@
     <meta charset = "UTF-8">
     <link rel=" stylesheet" href="lab03.css" />
 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css">
+
     <style>
         body{
             margin: 0 auto;
@@ -19,6 +22,16 @@
 
     <p>
         <h1 style="color: blue"> Laboratorio 1: Introducción a las aplicaciones web, HTML5 y ciclo de vida de los sistemas de información  </h1> <br>
+
+        <h4>Cambiar color de fondo</h4>
+
+        <div class="switch tiny">
+        <input class="switch-input" id="colorSwitch" type="checkbox">
+        <label class="switch-paddle" for="colorSwitch">
+            <span class="show-for-sr">Cambiar fondo</span>
+        </label>
+        </div>
+
         Nombre: Nicolas Bravo Miguel <br>
         Edad: 20 años <br>
         Fecha de nacimiento: 11 de mayo de 2005 <br>
@@ -330,7 +343,29 @@
     <footer>
         <a href ="https://code.visualstudio.com/" style = "text-align: center;"> &copy; Visual Studio </a>
     </footer>
+        <!-- jQuery requerido -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Foundation JS -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js"></script>
+
+    <script>
+    $(document).foundation();
+
+    const switchBtn = document.getElementById("colorSwitch");
+
+    switchBtn.addEventListener("change", function() {
+        if (this.checked) {
+        document.body.style.backgroundColor = "#cfe8ff"; // azul claro
+        } else {
+        document.body.style.backgroundColor = "white";
+        }
+    });
+    </script>
+
     <script src="lab04.js"></script>
+
+
 </body>
 
 </html> 
