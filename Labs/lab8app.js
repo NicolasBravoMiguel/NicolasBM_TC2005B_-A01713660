@@ -1,0 +1,391 @@
+
+html = `
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> Nicolas Bravo Miguel </title>
+    <meta charset = "UTF-8">
+    <link rel=" stylesheet" href="lab03.css" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css">
+
+    <style>
+        body{
+            margin: 0 auto;
+            max-width: 50em;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <p>
+        <h1 style="color: blue"> Laboratorio 1: Introducción a las aplicaciones web, HTML5 y ciclo de vida de los sistemas de información  </h1> <br>
+
+        <h4>Cambiar color de fondo</h4>
+
+        <div class="switch tiny">
+        <input class="switch-input" id="colorSwitch" type="checkbox">
+        <label class="switch-paddle" for="colorSwitch">
+            <span class="show-for-sr">Cambiar fondo</span>
+        </label>
+        </div>
+
+        Nombre: Nicolas Bravo Miguel <br>
+        Edad: 20 años <br>
+        Fecha de nacimiento: 11 de mayo de 2005 <br>
+        Marticula: A01713660 <br>
+        Correo: a01713660@tec.mx <br>
+    </p>
+    <hr/>
+
+    <div>
+        <h3 class="titulos"> ¿Cuál es la diferencia entre Internet y la World Wide Web? </h3>
+        <p id = "texto">
+            Cuando hablamos de internet nos referimos a la interconectividad de las redes a partir de la 
+            infraestructura que estos tienen es decir hablamos de los cables, le dos servidores y del hardware 
+            se podría decir que es la parte física mientras que cuando hablamos de la WWW o world wide web 
+            hablamos de un servicio que funciona a través de internet el cual nos ayuda a navegar a través 
+            de diferentes páginas. (https://www.facebook.com/bbcnews, 2019)
+        </p>
+
+        <hr/>
+
+        <h3 class="titulos"> ¿Cuáles son las partes de un URL? </h3>
+        <p>
+            Los URL se dividen en 5 partes  el protocolo (https://) el dominio o también conocido como host
+             (www.nicobravo.com), el Puerto (:007) la ruta (/tarea/lab1.html) despues estan los parametros o
+              mas conocidos como query strings (?nico=2) y ya por último el fragmento de ancla (#Hola). (¿Cuáles Son Las Partes de Una URL?, 2024)
+        </p>
+
+        <hr/>
+
+        <h3 class="titulos"> ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE? </h3>
+        <p id = "texto">
+             <ul> 
+                <li>Get: Obtiene información</li>
+                <li > Head : Devuelve encabezados  </li>
+                <li> Post: Envia datos para crear recursos </li>
+                <li> Put: Actualiza o reemplaza los recursos </li>
+                <li> Patch: Modifica los recursos </li>
+                <li> Delete: elimina un recurso </li>
+
+                (Team, 2023)
+            <ul>
+        </p>
+
+        <hr/>
+
+        <h3 class="titulos"> ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué? </h3>
+        <p>        
+            Se utiliza un ,método post ya que este nos permite que el usuario nos pueda enviar datos para 
+            crear recursos por lo que podríamos almacenar tanto su nombre como su contraseña
+            
+        </p>
+
+        <hr/>
+
+        <h3 class="titulos"> ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL? </h3>
+        <p id = "texto">        
+            El método en este caso sería un Get ya que con este podemos traer información la cual estemos buscando.
+           
+        </p>
+
+        <hr/>
+
+        <h3 class="titulos"> Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error? </h3>
+        <p>        
+            En Http un código 200 se refiere a que la petición fue realizada con éxito y que no aparece ningún error durante este proceso. (Rey, 2022)    
+        </p>
+
+        <hr/>
+
+        <h3 class="titulos"> ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué? </h3>
+        <p id = "texto">        
+            En https el error 404 se refiere a que un recurso no fue encontrado y puede referirse a que la página está mal 
+            configurada y que el enlace no está funcionando. Esto en la mayoría del tiempo si es responsabilidad del 
+            desarrollador corregir sin embargo a veces los desarrolladores crean estos tipos de errores de forma voluntaria 
+            para que algunos sistemas de seguridad sean mas difíciles de codificar ya que si un hacker llega a este error 
+            puede pensar que es un callejón sin fondo o q ya tocó con pared cuando no siempre es así.   (¿Qué Significa El Error “404 Not Found”?, 2025)       
+        </p class="titulos">
+
+        <hr/>
+
+        <h3 class="titulos"> ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué? </h3>
+        <p>        
+            El error 500 significa que el servidor interno tiene problemas ya puede ser que las bases de datos no están 
+            funcionando correctamente, hay fallos en el backend o simplemente no está correctamente configurada. Este 
+            error siempre hace referencia al servidor o a la aplicación y si es responsabilidad del desarrollador corregir 
+            este todo de errores cuando un usuario los reporta.    (¿Qué Es Error 500?, 2026)
+        </p>
+
+        <hr/>
+
+        <h3 class="titulos"> ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados. </h3>
+        <p>        
+            Un atributo que esta desaprobado se refiere a un atributo o función que todavía funciona pero ya no es recomendable usarlo ya 
+            que existen alternativas mucho mejores hoy en día. también se refiere a que en un futuro estas funciones pueden ser eliminadas 
+            del programa completamente. Algunos de los elementos que podríamos encontrar en HTML4 pero que en HTML5 se encuentran desaprobados 
+            serán front la cual se usaba para el estilo de texto o strike la cual se utilizaba para tachar texto con una línea que lo atravesaba.  
+            (Estas Son Las Etiquetas Obsoletas En HTML5: ¡Actualízate! | Tokio, 2026)         
+        </p>
+
+        <hr/>
+
+        <h3 class="titulos"> ¿Cuáles son las diferencias principales entre HTML 4 y HTML5? </h3>
+        <p id = "texto">        
+            En la versión 5 de HTML es mucho más semántica que la 4 al igual que tiene una variedad más 
+            alta de formularios . La versión 5 cuenta con nuevas etiquetas como header, nav, section, las 
+            cuales ayudan a la fluidez del programa. La versión 5 cuenta con  mucho más soporte nativo de 
+            multimedia y gráficas aparte de nuevas Apis.  Ya por último esta mejora la integración con CSS y Javascript.
+            (Barron, 2021)            
+        </p>
+
+        <hr/>
+
+        <h3 class="titulos"> ¿Qué componentes de estructura y estilo tiene una tabla? </h3>
+        <p>        
+            Una tabla cuenta con componentes como table la cual genera la tabla, tr y td
+            para las filas y columnas, th para los encabezados,  thead para el encabezado de tabla,
+            tbody para el cuerpo de las tablas y caption para el título de tabla.   (Marco, 2020)          
+        </p>
+
+        <hr/>
+
+        <h3 class="titulos"> ¿Cuáles son los principales controles de una forma HTML5? </h3>
+        <p id = "texto">        
+            Los principales controles de una forma HTML5 son input (para distintos tipos de datos como 
+            texto, contraseña, número o fecha), textarea (texto largo), select (listas desplegables), 
+            button (botones), label (etiquetas), y elementos como datalist, output, progress 
+            y meter, que sirven para sugerencias, resultados y valores o progreso.    
+            (Elementos Estructurales En HTML5 - IMMUNE, 2023)        
+        </p>
+
+        <hr/>
+
+        <h3 class="titulos"> ¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página 
+            para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que 
+            utilizas) 
+        </h3>
+        <p id = "texto">        
+            526/ 555 Google Chorme          
+        </p>
+
+        <hr/>
+
+        <hr>
+        <h3 class="titulos"> Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS?  </h3>
+        
+        <p>
+            Como ingeniero de software mi recomendacion seria que no se utilizara !important ya 
+            que rompe el esquema que sigue CSS ya que este altera varios procesos del código
+             natural haciendo que el mantenimiento , la sobrescritura y el debugging sean mucho más 
+             difíciles de realizar.
+
+        </p>
+
+        <hr>
+        <h3 class="titulos"> Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado? </h3>
+        <p id = "texto">        
+            Se debería de tomar en consideración algunos aspectos ya que sin estos el rendimiento (el tiempo de carga 
+            aumentará dependiendo del peso) la accesibilidad  (algunos botones o funciones podrían no realizarse correctamente) y 
+            la legibilidad (ya que es de vital poder presentar la información que el usuario está buscando) de 
+            esta estarían siendo afectados.    
+        </p>
+        <hr/>
+
+        <hr>
+        <h3 class="titulos"> Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt? </h3>
+        <p>        
+            <ul>
+
+                <li> % = Diseños responsivos  </li>
+                <li> px = Control de precios </li>
+                <li> pt = impresiones evitar en web </li>
+            </ul>   
+        </p>
+        <hr/>
+
+        <hr>
+        <h3 class="titulos"> ¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?
+        </h3>
+        <p id = "texto">        
+            <ul>
+                <li> Reduce el tamaño del archivo.  </li>
+                <li> Disminuye el tiempo de descarga. </li>
+                <li> Mejora la velocidad de carga del sitio </li>
+                <li> Es más eficiente en el procesamiento </li>
+
+            </ul>  
+        </p>
+        <hr/>
+
+
+        <hr>
+        <h3 class="titulos"> ¿Qué diferencias y semejanzas hay entre Java y JavaScript? </h3>
+        <p>        
+            
+            Semejanzas
+
+            <ul> 
+                <li> Pragrams orientados a objetos  </li>
+                <li> Aplicaciones WEB             </li>
+                <li> Sintaxis similares </li>
+                <li> Entornos ejectitivos </li>
+            </ul>
+
+            diferencias
+
+            <ul> 
+                <li> Java es compilado mientras que JavaScript es interpretado </li>
+                <li> Java se usa para aplicaciones moviles y backend  </li>
+                <li> JavaScript se usa primordialmente para desarrollo web </li>
+                <li> JavaScript es mucho mas flexible en temas de lenguaje </li>
+                <li> JavaScript permite manipular HTML y CSS directamente </li>
+            </ul>
+
+     
+        </p>
+        <hr/>
+
+
+        <hr>
+        <h3 class="titulos"> ¿Qué métodos tiene el objeto Date? (Menciona al menos 5*) </h3>
+        <p id = "texto">        
+            <ul>
+                <li> getDate() → obtiene el día del mes </li>
+                <li> getHours() → obtiene la hora </li>
+                <li> getMinutes() → obtiene los minutos </li>
+                <li> getSeconds() → obtiene los segundos</li>
+                <li> getTime() → obtiene milisegundos desde 1970.                </li>
+
+            </ul>  
+        </p>
+        <hr/>
+
+    
+        <h3 class="titulos"> ¿Qué métodos tiene el objeto Date? (Menciona al menos 5*) </h3>
+        <p>        
+            <ul>
+                <li> push() → agrega elementos al final </li>
+                <li> pop() → elimina el último elemento. </li>
+                <li> shift() → elimina el primero </li>
+                <li> unshift() → agrega al inicio </li>
+                <li> slice() → extrae parte del arreglo</li>
+
+            </ul>  
+        </p>
+        <hr/>
+
+        <hr>
+        <h3 class="titulos"> ¿Cómo se declara una variable con alcance local dentro de una función? </h3>
+        <p id = "texto">        
+            Una variable con alcance local dentro de una función se declara a través de let o de const.
+        </p>
+        <hr/>
+
+
+        <hr>
+        <h3 class="titulos"> ¿Qué implicaciones tiene utilizar variables globales dentro de funciones?
+        </h3>
+        <p>
+            <ul>
+                <li>  Sobrescribir accidentalmente </li>
+                <li> Mayor riesgo de errores </li>
+                <li> Conflicto entre declaracion de nombres </li>
+                <li> Hce codigo menos seguro </li>
+                <li> Dificultad al mantener el código </li>
+            </ul>        
+            
+        </p>
+        <hr/>   
+
+
+
+
+
+
+
+
+        <hr>
+        
+        <h3 class="titulos"> Referencias </h3>
+        <p>        
+         
+        <ul>
+
+
+        </ul>
+            <li>https://www.facebook.com/bbcnews. (2019, March 12). Leonard Kleinrock, el profesor de EE.UU. que envió el primer mensaje por internet. BBC News Mundo. https://www.bbc.com/mundo/noticias-47538812
+            </li>
+            <li> ¿Cuáles son las partes de una URL? (2024). Web.dev. https://web.dev/articles/url-parts?hl=es-419 </li>
+            <li> Team, T. P. (2023, August 3). What are HTTP methods? Postman Blog. https://blog.postman.com/what-are-http-methods/ </li>
+            <li> Rey, F. (2022, July 22). Todo sobre el código HTTP 200. Raiola Networks - Dominios Y Alojamiento Web de Calidad; Blog de Raiola Networks. https://raiolanetworks.com/blog/codigo-200/ </li>
+            <li> ¿Qué significa el error “404 not found”? (2025, November 14). IONOS Digital Guide. https://www.ionos.mx/digitalguide/paginas-web/creacion-de-paginas-web/que-significa-el-error-404-not-found/ </li>
+            <li> ¿Qué es error 500? (2026). One.com. https://www.one.com/es-es/hosting/que-es-error-500/ </li>
+            <li> Estas son las etiquetas obsoletas en HTML5: ¡Actualízate! | Tokio. (2026). Tokio School. https://www.tokioschool.com/noticias/etiquetas-obsoletas-html5/ </li>
+            <li> Barron, B. (2021, April 8). HTML vs HTML5: Conoce las diferencias cruciales entre ellos. Kinsta®. https://kinsta.com/es/blog/html-vs-html5/ </li>
+            <li> Marco, B. S. (2020). Tablas. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org. Mclibre.org. https://www.mclibre.org/consultar/htmlcss/html/html-tablas.html </li>
+            <li>Elementos Estructurales en HTML5 - IMMUNE. (2023, January 9). IMMUNE Technology Institute. https://immune.institute/blog/elementos-estructurales-en-html5/#:~:text=En%20este%20art%C3%ADculo%2C%20exploraremos%20cinco,sem%C3%A1ntica%20y%20posibilidad%20de%20anidaci%C3%B3n. </li>
+            
+
+‌         
+        </p>
+
+        <hr/>
+        
+
+
+    </div>
+
+
+    <footer>
+        <a href ="https://code.visualstudio.com/" style = "text-align: center;"> &copy; Visual Studio </a>
+    </footer>
+        <!-- jQuery requerido -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Foundation JS -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js"></script>
+
+    <script>
+    $(document).foundation();
+
+    const switchBtn = document.getElementById("colorSwitch");
+
+    switchBtn.addEventListener("change", function() {
+        if (this.checked) {
+        document.body.style.backgroundColor = "#cfe8ff"; // azul claro
+        } else {
+        document.body.style.backgroundColor = "white";
+        }
+    });
+    </script>
+
+    <script src="lab04.js"></script>
+
+
+</body>
+
+</html> 
+
+`;
+
+
+
+const http = require('http');
+
+const server = http.createServer((request, response) => {  
+//    console.log(request);  
+//    console.log(response);
+    console.log(request.url);
+    response.setHeader('Content-Type', 'text/html');
+    response.write(html);
+    response.end();
+});
+
+server.listen(3000);
