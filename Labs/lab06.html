@@ -9,20 +9,91 @@
 </head>
 <body>
     <div class="container">
-        <imput type="contraseña" id="contraseña" placeholder="Ingresa tu contraseña">
+        <h1>Lab 06 - Crea tu contraseña</h1>
+        <form>
+            <div class="input-group">
+                <imput type="contraseña" id="confirmarContraseña" placeholder="Ingresa tu contraseña">
+            </div>
+            <div class="validacion" id="barraDeValidacion"></div>
+                <div class="requerimientos">
+                    <p id="longitud" class="invalido">Longitud mínima: 8 caracteres</p>
+                    <p id="mayuscula" class="invalido">Al menos una letra mayúscula</p>
+                    <p id="minuscula" class="invalido">Al menos una letra minúscula</p>
+                    <p id="numero" class="invalido">Al menos un número</p>
+                    <p id="simbolo" class="invalido">Al menos un carácter especial</p>
+                </div>
+
+            <p class="resultado" id="mensajeDelResultado"></p>
+
+            <botton id="Validar">Crear cuenta</botton>
+        </form>
     </div>
 
-    <div class="validacion" id="barraDeValidacion"></div>
-    <div class="requerimientos">
-        <p id="longitud">Longitud mínima: 8 caracteres</p>
-        <p id="mayuscula">Al menos una letra mayúscula</p>
-        <p id="minuscula">Al menos una letra minúscula</p>
-        <p id="numero">Al menos un número</p>
-        <p id="caracterEspecial">Al menos un carácter especial</p>
-    </div>
+    <script>
+       const contraseña = document.getElementById("contraseña");
+        const confirmarContraseña = document.getElementById("confirmarContraseña");
+        const reqLongitud = document.getElementById("longitud");
+        const reqMayuscula = document.getElementById("mayuscula");
+        const reqMinuscula = document.getElementById("minuscula");
+        const reqNumero = document.getElementById("numero");
+        const reqSimbolo = document.getElementById("simbolo");
+        const barraDeValidacion = document.getElementById("barraDeValidacion");
+        const mensajeDelResultado = document.getElementById("mensajeDelResultado");
+
+        contraseña.addEventListener("input", validarContraseña);
+        confirmarContraseña.addEventListener("input", checarCoincidencia);
+
+        function validarContraseña() {
+            const valor = contraseña.value;
+            let fuerza = 0;
+
+            // Verificar longitud mínima
+            if (valor.length >= 8) {
+                reqLongitud.className = "valido";
+                fuerza++;
+            } else {
+                reqLongitud.className = "invalido";
+            }
+
+            // Verificar mayúscula
+            if (/[A-Z]/.test(valor)) {
+                reqMayuscula.className = "valido";
+                fuerza++;
+            } else {
+                reqMayuscula.className = "invalido";
+            }
+
+            // Verificar minúscula
+            if (/[a-z]/.test(valor)) {
+                reqMinuscula.className = "valido";
+                fuerza++;
+            } else {
+                reqMinuscula.className = "invalido";
+            }
+
+            // Verificar número
+            if (/[0-9]/.test(valor)) {
+                reqNumero.className = "valido";
+                fuerza++;
+            } else {
+                reqNumero.className = "invalido";
+            }
+
+            // Verificar símbolo especial
+            if (/[^A-Za-z0-9]/.test(valor)) {
+                reqSimbolo.className = "valido";
+                fuerza++;
+            } else {
+                reqSimbolo.className = "invalido";
+            }
+
+            actualizarFuerza(fuerza);
+            checarCoincidencia();
+        }
+
+    </script>
 
 
-    <h1>Lab 06 - Crea tu contraseña</h1
 
 
 </body>
