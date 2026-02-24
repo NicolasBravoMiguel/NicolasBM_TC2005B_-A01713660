@@ -1,35 +1,42 @@
+html = `
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 06 - JavaScript</title>
-    <link rel="stylesheet" href="lab06css.css" />
-
+    <link rel="stylesheet" href="lab06css.css">
 </head>
 <body>
     <div class="container">
         <h1>Lab 06 - Crea tu contraseña</h1>
         <form>
             <div class="input-group">
-                <imput type="contraseña" id="confirmarContraseña" placeholder="Ingresa tu contraseña">
+                <input type="password" id="contraseña" placeholder="Ingresa tu contraseña">
             </div>
+            <div class="input-group">
+                <input type="password" id="confirmarContraseña" placeholder="Confirma tu contraseña">
+            </div>
+
             <div class="validacion" id="barraDeValidacion"></div>
-                <div class="requerimientos">
-                    <p id="longitud" class="invalido">Longitud mínima: 8 caracteres</p>
-                    <p id="mayuscula" class="invalido">Al menos una letra mayúscula</p>
-                    <p id="minuscula" class="invalido">Al menos una letra minúscula</p>
-                    <p id="numero" class="invalido">Al menos un número</p>
-                    <p id="simbolo" class="invalido">Al menos un carácter especial</p>
-                </div>
+
+            <div class="requerimientos">
+                <p id="longitud" class="invalido">✔ Longitud mínima: 8 caracteres</p>
+                <p id="mayuscula" class="invalido">✔ Al menos una letra mayúscula</p>
+                <p id="minuscula" class="invalido">✔ Al menos una letra minúscula</p>
+                <p id="numero" class="invalido">✔ Al menos un número</p>
+                <p id="simbolo" class="invalido">✔ Al menos un carácter especial</p>
+            </div>
 
             <p class="resultado" id="mensajeDelResultado"></p>
 
-            <botton id="Validar">Crear cuenta</botton>
+            <button type="submit" id="validar">Crear cuenta</button>
         </form>
     </div>
 
     <script>
-       const contraseña = document.getElementById("contraseña");
+        const contraseña = document.getElementById("contraseña");
         const confirmarContraseña = document.getElementById("confirmarContraseña");
         const reqLongitud = document.getElementById("longitud");
         const reqMayuscula = document.getElementById("mayuscula");
@@ -119,13 +126,24 @@
                 mensajeDelResultado.style.color = "red";
             }
         }
-
     </script>
-
-
-
-
 </body>
 </html>
-
    
+
+`;
+
+
+
+const http = require('http');
+
+const server = http.createServer((request, response) => {  
+//    console.log(request);  
+//    console.log(response);
+    console.log(request.url);
+    response.setHeader('Content-Type', 'text/html');
+    response.write(html);
+    response.end();
+});
+
+server.listen(3000);
