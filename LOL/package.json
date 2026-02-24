@@ -1,0 +1,23 @@
+{
+  "name": "lol",
+  "version": "1.0.0",
+  "description": "Laboratorios de apoyo de TC2005B",
+  "keywords": [
+    "LOL"
+  ],
+  "homepage": "https://github.com/NicolasBravoMiguel/NicolasBM_TC2005B_-A01713660#readme",
+  "bugs": {
+    "url": "https://github.com/NicolasBravoMiguel/NicolasBM_TC2005B_-A01713660/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasBravoMiguel/NicolasBM_TC2005B_-A01713660.git"
+  },
+  "license": "ISC",
+  "author": "Nicolas Bravo Miguel",
+  "type": "commonjs",
+  "main": "ProjectoLOLintro.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
