@@ -68,18 +68,18 @@ const html =`
 
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hello Bulma!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-  </head>
-  <body>
-  <section class="section">
+</head>
+<body>
+<section class="section">
     <div class="container">
-      <h1 class="title">
+    <h1 class="title">
         League of Legends
-      </h1>
+    </h1>
         <p class="subtitle">
             My first website with <strong>Bulma</strong>!
         </p>
@@ -131,8 +131,8 @@ const html =`
             </div>
         </div>
     </div>
-  </section>
-  <section class="section">
+</section>
+<section class="section">
     <div class="container">
         <div class="columns">
             <div class="column">
@@ -148,9 +148,9 @@ const html =`
             </div>
         </div>
     </div>
-  </section>
+</section>
 
-  <div id="modal-js-example" class="modal">
+<div id="modal-js-example" class="modal">
     <div class="modal-background"></div>
 
     <div class="modal-content">
@@ -161,10 +161,10 @@ const html =`
     </div>
 
     <button class="modal-close is-large" aria-label="close"></button>
-  </div>
+</div>
 
-  <script src="js/lol.js"></script>
-  </body>
+<script src="js/lol.js"></script>
+</body>
 </html>
 
 `;
