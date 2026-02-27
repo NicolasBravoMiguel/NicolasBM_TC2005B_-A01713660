@@ -36,66 +36,6 @@ const personajes = [
     },
 ];
 
-const html_header = `
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-  </head>
-  <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        <a href="/personajes">League of Legends</a>
-      </h1>
-        <p class="subtitle">
-            My first website with <strong>Bulma</strong>!
-        </p>
-`;
-
-const html_footer = `
-    <!--script src="js/lol.js"></script-->
-  </body>
-</html>
-`;
-
-const html_form = `
-    <form action="/personajes/new" method="POST">
-        <div class="field">
-            <label for="nombre" class="label">Nombre</label>
-            <div class="control">
-                <input id="nombre" name="nombre" class="input" type="text" placeholder="e.g Vi">
-            </div>
-        </div>
-
-        <div class="field">
-            <label for="descripcion" class="label">Descripción</label>
-            <div class="control">
-                <input id="descripcion" name="descripcion" class="input" type="text" placeholder="e.g. Criada en las calles salvajes de Zaun...">
-            </div>
-        </div>
-
-        <div class="field">
-            <label for="tipo" class="label">Tipo</label>
-            <div class="control">
-                <input id="tipo" name="tipo" class="input" type="text" placeholder="e.g. Peleador">
-            </div>
-        </div>
-
-        <div class="field">
-            <label for="imagen" class="label">Imagen</label>
-            <div class="control">
-                <input id="imagen" name="imagen" class="input" type="text" placeholder="e.g. https://tooys.mx/media/catalog/product/cache/0daeb07bb1d294c1f281fab47369d56a/h/o/hot-toys-league-of-legends-vi-sixth-scale_0.jpg">
-            </div>
-        </div>
-
-        <input class="button is-primary" type="submit" value="Guardar personaje">
-    </form>
-`;
-
 //Middleware
 router.use((request, response, next) => {
     console.log('Middleware!');
@@ -103,40 +43,22 @@ router.use((request, response, next) => {
 });
 
 router.get('/new', (request, response, next) => {
-    response.send(html_header + html_form + html_footer);
+    response.render('new');
 });
 
 router.post('/new', (request, response, next) => {
     console.log(request.body);
     personajes.push(request.body);
-    response.send(html_header + html_form + html_footer);
-})
-
-router.use((request, response, next) => {
-    let html_index = `
-            <a class="button is-primary" href="/personajes/new">Nuevo personaje</a>
-            <div class="columns">
-        `;
-
-        for (let personaje of personajes) {
-            html_index += `
-                <div class="column">
-                    ${personaje.nombre}
-                    <figure class="image">
-                        <img class="is-rounded" src="${personaje.imagen}" />
-                    </figure>
-                </div>
-            `;
-        }
-
-        html_index += `
-                    </div>
-                </div>
-            </section>
-        `;
-
-    response.send(html_header + html_index + html_footer); //Manda la respuesta
+    response.redirect('/personajes');
 });
 
+router.get('/old', (request, response, next) => {
+    const path = require('path');
+    response.sendFile(path.join(__dirname, '..', 'old_labs', 'index.html'));
+});
+
+router.use((request, response, next) => {
+    response.render('list', {personajes: personajes}); 
+});
 
 module.exports = router;
