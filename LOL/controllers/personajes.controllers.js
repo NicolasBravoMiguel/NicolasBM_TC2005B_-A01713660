@@ -1,4 +1,4 @@
-const Personaje = require('../models/personaje.model');
+const Personaje = require('../models/personaje.models');
 
 exports.get_add = (request, response, next) => {
     response.render('new', {

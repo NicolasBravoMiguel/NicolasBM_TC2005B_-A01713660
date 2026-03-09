@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 const rutas_usuarios = require('./routes/users.routes');
 app.use('/users', rutas_usuarios);
-const rutas_personajes = require('./routes/personajes.routes');
+const rutas_personajes = require('./routes/personaje.routes');
 app.use('/personajes', rutas_personajes);
 
 app.use((request, response, next) => {

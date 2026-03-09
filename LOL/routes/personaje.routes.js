@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const personajesController = require('../controllers/personajes.controller');
+const personajesController = require('../controllers/personajes.controllers');
 
 router.get('/new', personajesController.get_add);
 router.post('/new', personajesController.post_add);
