@@ -26,6 +26,8 @@ exports.get_list = (request, response, next) => {
             username: request.session.username || '',
             personajes: rows,
         }); 
-    }).catch(() => {});
     
+    }).catch((error) => {
+        next(error);
+    });
 };
