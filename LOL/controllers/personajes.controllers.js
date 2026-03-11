@@ -26,10 +26,11 @@ exports.get_old = (request, response, next) => {
 };
 
 exports.get_list = (request, response, next) => {
-    console.log(request.session.username);
+    console.log(request.session.permisos);
 
     Personaje.fetch(request.params.personaje_id).then(([rows, fieldData]) => {
         return response.render('list', {
+            permisos: request.session.permisos || [],
             username: request.session.username || '',
             personajes: rows,
         }); 
