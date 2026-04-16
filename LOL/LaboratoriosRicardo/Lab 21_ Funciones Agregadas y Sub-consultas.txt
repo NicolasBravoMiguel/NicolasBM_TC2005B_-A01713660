@@ -1,0 +1,118 @@
+﻿1.
+
+
+SELECT Sum(cantidad) as 'Cantidad total', Sum(cantidad*(precio+impuesto)) as 'Importe total'
+From materiales m, entregan e
+Where m.clave = e.clave
+AND e.fecha BETWEEN '01/01/1997' and '31/12/1997'
+
+
+  
+
+
+
+2. 
+
+
+SELECT razonsocial, numero, SUM(cantidad) AS 'Cantidad total', SUM(cantidad*(precio+impuesto)) AS 'Importe total', count(e.clave) AS 'Numero de entregas'
+FROM proveedores p, entregan e, materiales m
+Where p.rfc = e.rfc AND m.clave = e.clave
+GROUP BY p.razonsocial
+
+
+  
+
+
+
+3.
+
+
+SELECT m.clave, m.descripcion, SUM(cantidad), MIN(cantidad), MAX(Cantidad), SUM(cantidad*(precio+impuesto)) AS 'Importe total'
+FROM materiales m, entregan e
+WHERE m.clave = e.clave
+GROUP BY m.clave
+HAVING AVG(e.cantidad)>400
+
+
+  
+
+
+
+4. 
+
+
+SELECT razonsocial, cantidad, m.clave, m.descripcion
+FROM materiales m, entregan e, proveedores p
+WHERE  m.clave = e.clave AND p.rfc = e.rfc
+GROUP BY p.rfc, m.clave, m.descripcion
+HAVING AVG(cantidad)<500
+
+
+  
+
+
+
+5.
+
+
+SELECT razonsocial, cantidad, m.clave, m.descripcion
+FROM materiales m, entregan e, proveedores p
+WHERE  m.clave = e.clave AND p.rfc = e.rfc
+GROUP BY p.rfc, m.clave, m.descripcion
+HAVING AVG(cantidad)< 370
+OR AVG(cantidad) < 450
+
+
+  
+
+
+
+6.
+
+
+SELECT clave, descripción
+FROM materiales m
+WHERE clave NOT IN (SELECT clave
+                    FROM entregan)
+  
+
+7.
+
+
+SELECT p.razonsocial
+FROM proveedores p , proyectos pro, entregan e
+WHERE p.rfc = e.rfc AND pro.numero = e.numero 
+AND denominacion = 'Vamos México' AND p.razonsocial
+IN (SELECT p.razonsocial
+FROM proveedores p , proyectos pro, entregan e
+WHERE p.rfc = e.rfc AND pro.numero = e.numero 
+AND denominacion = 'Querétaro Limpio')
+  
+
+
+
+8.
+SELECT descripcion
+FROM materiales m, entregan e
+WHERE e.clave = m.clave
+AND e.clave NOT IN (SELECT clave
+                                FROM entregan e ,proyectos p
+                                WHERE e.numero = p.numero AND p.denominacion = 'CIT Yucatán');
+
+
+  
+
+
+
+
+
+9.
+SELECT p.razonsocial, AVG(e.cantidad) AS CantidadEntrega
+FROM proveedores p
+JOIN entregan e ON p.rfc = e.rfc
+GROUP BY p.razonsocial
+HAVING AVG(e.cantidad) > (
+    SELECT AVG(e2.cantidad)
+    FROM entregan e2
+    WHERE e2.rfc = 'VAGO780901'
+)
