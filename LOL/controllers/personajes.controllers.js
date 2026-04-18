@@ -1,5 +1,5 @@
 const Personaje = require('../models/personaje.models');
-const Tipo = require('../models/tipo.model');
+const Tipo = require('../models/tipo.models');
 
 
 exports.get_add = (request, response, next) => {
