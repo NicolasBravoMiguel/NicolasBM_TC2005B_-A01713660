@@ -42,6 +42,42 @@ app.use(multer({ storage: fileStorage }).single('imagen'));
 
 
 
+require('dotenv').config();
+
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const User = require('./models/user.models');
+
+passport.use(new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: '/users/auth/google/callback'
+}, (accessToken, refreshToken, profile, done) => {
+    const email = profile.emails[0].value;
+    const nombre = profile.displayName;
+    User.fetchOne(email).then(([usuarios]) => {
+        if (usuarios.length > 0) {
+            return done(null, usuarios[0]);
+        }
+        return User.saveGoogle(email, nombre).then(() => {
+            return User.fetchOne(email).then(([nuevos]) => done(null, nuevos[0]));
+        });
+    }).catch(done);
+}));
+
+passport.serializeUser((user, done) => {
+    done(null, user.username);
+});
+
+passport.deserializeUser((username, done) => {
+    User.fetchOne(username).then(([usuarios]) => {
+        done(null, usuarios[0]);
+    }).catch(done);
+});
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 const csrf = require('csrf');
 const csrfTokens = new csrf();
 
