@@ -42,9 +42,32 @@ app.use(multer({ storage: fileStorage }).single('imagen'));
 
 
 
-const csrf = require('csurf');
-const csrfProtection = csrf();
-app.use(csrfProtection); 
+const csrf = require('csrf');
+const csrfTokens = new csrf();
+
+app.use((request, response, next) => {
+    if (!request.session.csrfSecret) {
+        csrfTokens.secret((err, secret) => {
+            if (err) return next(err);
+            request.session.csrfSecret = secret;
+            next();
+        });
+    } else {
+        next();
+    }
+});
+
+app.use((request, response, next) => {
+    request.csrfToken = () => csrfTokens.create(request.session.csrfSecret);
+    if (['GET', 'HEAD', 'OPTIONS'].includes(request.method)) return next();
+    const token = request.body._csrf || request.headers['x-csrf-token'];
+    if (!csrfTokens.verify(request.session.csrfSecret, token)) {
+        const error = new Error('Invalid CSRF token');
+        error.status = 403;
+        return next(error);
+    }
+    next();
+});
 
 const rutas_usuarios = require('./routes/users.routes');
 app.use('/users', rutas_usuarios);
