@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 
 const usersController = require('../controllers/user.controller');
+const User = require('../models/user.models');
 
 router.get('/login', usersController.get_login);
 router.post('/login', usersController.post_login);
@@ -14,11 +15,13 @@ router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 
 // Ruta a la que Google regresa con el resultado
 router.get('/auth/google/callback',
     passport.authenticate('google', { failureRedirect: '/users/login' }),
-    (request, response) => {
+    (request, response, next) => {
         request.session.isLoggedIn = true;
         request.session.username = request.user.username;
-        request.session.permisos = [];
-        response.redirect('/personajes');
+        User.getPermisos(request.user.username).then(([permisos]) => {
+            request.session.permisos = permisos;
+            return request.session.save(() => response.redirect('/personajes'));
+        }).catch(next);
     }
 );
 

@@ -26,7 +26,12 @@ module.exports = class User {
         return db.execute(
             "INSERT INTO usuarios(username, nombre, password, correo) VALUES (?, ?, 'GOOGLE_USER', ?)",
             [email, nombre, email]
-        );
+        ).then(() => {
+            return db.execute(
+                "INSERT INTO tiene(id_usuario, id_rol) VALUES (?, 1)",
+                [email]
+            );
+        });
     }
 
     static fetchOne(username) {
