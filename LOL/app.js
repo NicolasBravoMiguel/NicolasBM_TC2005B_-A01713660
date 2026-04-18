@@ -69,6 +69,10 @@ app.use((request, response, next) => {
     next();
 });
 
+app.get('/', (request, response) => {
+    response.redirect('/personajes');
+});
+
 const rutas_usuarios = require('./routes/users.routes');
 app.use('/users', rutas_usuarios);
 const rutas_personajes = require('./routes/personaje.routes');
@@ -82,4 +86,6 @@ app.use((request, response, next) => {
     response.status(404).send("La ruta no existe");
 })
 
-app.listen(3000);
+app.listen(3000, () => {
+    console.log('Servidor corriendo en http://localhost:3000');
+});

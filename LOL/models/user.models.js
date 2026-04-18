@@ -18,9 +18,6 @@ module.exports = class User {
                 "INSERT INTO usuarios(username, nombre, password, correo) VALUES (?, ?, ?, ?)" ,
                 [this.username, this.nombre, password_cifrado, this.correo]
             );
-        }).catch((error) => {
-            console.log(error);
-            next(error);
         });
 
     }
