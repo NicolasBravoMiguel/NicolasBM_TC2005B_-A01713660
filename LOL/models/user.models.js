@@ -22,8 +22,15 @@ module.exports = class User {
 
     }
     
+    static saveGoogle(email, nombre) {
+        return db.execute(
+            "INSERT INTO usuarios(username, nombre, password, correo) VALUES (?, ?, 'GOOGLE_USER', ?)",
+            [email, nombre, email]
+        );
+    }
+
     static fetchOne(username) {
-        
+
         return db.execute("SELECT * FROM usuarios WHERE username = ?", [username]);
     }
 
